@@ -35,16 +35,16 @@ def readTrafficSigns(rootpath):
             im = plt.imread(prefix + row["Filename"])
             im = im[x1:x2, y1:y2,:]
             y, x, a= im.shape
-            if x == 32 and y == 32:
+            if 1 == 1:
                 images.append(im) # the 1th column is the filename
                 labels.append(row["ClassId"]) # the 8th column is the label
         gtFile.close()
-    ret = {"features": images, "lables":labels}
+    ret = {"features": images, "labels":labels}
     return ret
 
 if __name__ == "__main__":
     ret = readTrafficSigns("/Users/neotrinity/Downloads/交通标志分类/GTSRB_final_training/Final_Training/Images")
     print(len(ret["features"]))
-    with open("train.p", 'wb') as output:
+    with open("train_all.p", 'wb') as output:
         pickle.dump(ret,output)
 
