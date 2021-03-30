@@ -33,7 +33,7 @@ def readTrafficSigns(rootpath):
             x2 = int(row["Roi.X2"])
             y2 = int(row["Roi.Y2"])
             im = plt.imread(prefix + row["Filename"])
-            im = im[x1:x2, y1:y2,:]
+            im = im[y1:y2, x1:x2,:]
             y, x, a= im.shape
             if 1 == 1:
                 images.append(im) # the 1th column is the filename

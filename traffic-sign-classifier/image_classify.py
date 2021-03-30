@@ -6,9 +6,9 @@ import numpy as np
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-training_file = "train.p"
-validation_file = "train.p"
-testing_file = "train.p"
+training_file = "train_all.p"
+validation_file = "train_all.p"
+testing_file = "train_all.p"
 
 with open(training_file, mode='rb') as f:
     train = pickle.load(f)
